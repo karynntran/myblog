@@ -1,0 +1,11 @@
+<h1> kar who codes </h1>
+
+<table>
+<%@entries.each do |entry| %>
+	<tr>
+		<td><%=entry.header%></td>
+		<td><%=entry.post%></td>
+		<td><%=entry.date_created%></td>
+	</tr>
+<%end%>
+<table>

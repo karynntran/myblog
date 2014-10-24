@@ -1,0 +1,27 @@
+
+<table>
+	<tr>
+		<td><%= @entry.header %></td>
+	</tr>
+	<tr>
+		<td><%= @entry.post %></td>
+	</tr>
+	<tr>	
+		<td><%= @entry.updated_at %></td>
+	</tr>
+</table>
+
+
+<table class = "edit_delete">
+	<tr>
+		<td>
+			<a class = "nav" href="/entries/<%=@entry.id%>/edit">Edit</a> 
+		</td>
+		<td>
+			<form action = '/entries/<%=@entry.id%>' name="method" method="post">
+			<input type ="hidden" name="_method" value="delete"/>
+			<input class ="delete" type ="submit" value="Delete entry"/>
+			</form>
+		</td>
+	</tr>
+</table>

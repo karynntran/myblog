@@ -1,0 +1,8 @@
+<h1>Edit Your Entry</h1>
+
+<form action = '/entries/<%=@entry.id%>}' name="method" method="post">
+  <input type ="hidden" name="_method" value="patch"/>
+  <p>Header:</p><input type ="text" name="entry[header]" placeholder="Add header here..."/>
+  <p>Post:</p><input type ="text" name="entry[post]" placeholder="Write entry here..."/>
+  <input type ="submit" value="Submit">
+</form>	
