@@ -1,13 +1,11 @@
-<div class="wrapper">
-  <h1>All Entries</h1>
+<h1>All Entries</h1>
 
-	<table>
-	  <%@entries.each do |entry| %>
-		  <tr>
-			  <td><a href="/entries/<%=entry.id%>"><%=entry.header%></a></td>
-			  <td><%=entry.post%></td>
-			  <td><%=entry.updated_at%></td>
-		  </tr>
-	  <%end%>
-	<table>
-</div>
+<table>
+  <%@entries.each do |entry| %>
+	  <tr>
+		  <td><a href="/entries/<%=entry.id%>"><%=entry.header%></a></td>
+		  <td><%=entry.post%></td>
+		  <td><%=entry.updated_at%></td>
+	  </tr>
+  <%end%>
+<table>

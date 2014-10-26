@@ -43,6 +43,7 @@ end
 ### SESSIONS ###
 
 get '/sessions/new' do
+  @current_user
   erb :'sessions/new'
 end
 

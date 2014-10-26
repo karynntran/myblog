@@ -1,26 +1,43 @@
 body {
+	background: white;
+	font-family: 'Comfortaa', cursive;
+}
+
+p {
+	float: left;
+	text-align: right;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	padding-left: 10px;
+	color: green;
+	font-size: 40px;
+}
+
+.homepage {
 	background-image: url('/images/upfeathers.png');
+	height: 300px;
+	margin-top: 150px;
 }
 
 li {
 	display: inline-block;
-	margin-top: 200px;
+	vertical-align: middle;
+	margin-top: 40px;
 }
 
 a {
 	color: white;
 	text-decoration: none; 
 	font-size: 20px;
-	font-family: arial;
 }
 
 .circle {
 	color: white;
 	border-radius: 50%;
-	width: 200px;
-	height: 200px;
+	width: 175px;
+	height: 175px;
 	text-align: center;
-	line-height: 200px;
+	line-height: 175px;
 	border: solid 10px #FDF9F5;
 }
 
@@ -36,10 +53,16 @@ a {
 	background-color: #FF9966;
 }
 
+.me {
+	background-image: url('/images/profilepicture.jpg');
+	background-position: center;
+}
+
 /*div nav*/
 
 .nav {
 	background-color: white;
+	background-size: 20px;
 	height: 20px;
 	width: 100px;
 }

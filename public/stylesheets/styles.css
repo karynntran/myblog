@@ -1,17 +1,18 @@
 body {
 	background-color: white;
-	background-image: url('/images/upfeathers.png');
-	font-family: arial;
+	font-family: 'Comfortaa', cursive;
 }
 
 /*content*/
 
 .wrapper {
-	background-color: white;
+	background-image: url('/images/upfeathers.png');
+	min-height: 300px;
 	height: auto;
-	width: 700px;
+	width: 800px;
 	padding: 15px;
-	margin: auto auto;
+	margin: 60px auto;
+	border: solid 5px #FDF9F5;
 }
 
 /*navigation*/
@@ -40,10 +41,14 @@ body {
 	padding: 10px 20px;
 	border: 0;
 	font-size: 16px;
-	font-family: arial;
 	border-radius: 20px 0 20px 0;
+	font-family: 'Comfortaa', cursive;
 }
 
+.user {
+	font-size: 12px;
+	color: gray;
+}
 /*entries*/
 
 .header {

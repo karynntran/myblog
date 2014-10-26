@@ -19,6 +19,16 @@ namespace :db do
     conn.close
   end
 
+  desc "Add admin"
+  task :admin do
+
+    require_relative 'connection'
+    require_relative 'models/user'
+
+    User.create({username: "karynn", password_hash: "password"})
+
+  end
+
   desc "load database with initial data"
   task :load_data do
 

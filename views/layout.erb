@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
   <title>karynn who codes</title>
   <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+  <link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
   <script src='/javascripts/jquery.js'></script>
   <script src='/javascripts/scripts.js'></script>
 </head>
@@ -14,9 +15,13 @@
 		<% else %>
 			<%= erb :'_nav_for_non_users'%>
 		<% end %>
+		</div>
+
 	</div>	
 </header>
 <body>
-  <%=yield%>
+  <div class ="wrapper">
+    <%=yield%>
+  </div>
 </body>
 </html>
