@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 
     def authenticate_admin
       if self.username != "karynn"
-        raise AuthenticateAdmin, "**You must be an admin to edit this post**"
+        raise AuthenticateAdmin, "**You must be an admin to edit this post. Log in <a href='/sessions/new'>here</a>**"
       end
     end
 end

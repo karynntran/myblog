@@ -1,33 +1,34 @@
-
-<table>
-	<tr>
-		<td><%= @entry.header %></td>
-	</tr>
-	<tr>
-		<td><%= @entry.post %></td>
-	</tr>
-	<tr>	
-		<td><%= @entry.updated_at %></td>
-	</tr>
-</table>
-
-<% if @error %>
-	<span style="color:gray"><%= @error %></span>
-<% else %>
-	<table class = "edit_delete">
+<div class="wrapper">
+	<table>
 		<tr>
-			<td>
-				<a class = "nav" href="/entries/<%=@entry.id%>/edit">Edit</a> 
-			</td>
-			<td>
-				<form action = '/entries/<%=@entry.id%>' name="method" method="post">
-				<input type ="hidden" name="_method" value="delete"/>
-				<input class ="delete" type ="submit" value="Delete entry"/>
-				</form>
-			</td>
+			<td><p class="header"><%= @entry.header %></p></td>
+		</tr>
+		<tr>
+			<td><%= @entry.post %></p></td>
+		</tr>
+		<tr>	
+			<td><%= @entry.updated_at %></td>
 		</tr>
 	</table>
-<% end %>
 
+	<% if @error %>
+		<span class ="errors"><%= @error %></span>
+	<% else %>
+		<table class = "edit_delete">
+			<tr>
+				<td>
+					<a class = "nav" href="/entries/<%=@entry.id%>/edit">Edit</a> 
+				</td>
+				<td>
+					<form action = '/entries/<%=@entry.id%>' name="method" method="post">
+					<input type ="hidden" name="_method" value="delete"/>
+					<input class ="delete" type ="submit" value="Delete entry"/>
+					</form>
+				</td>
+			</tr>
+		</table>
+	<% end %>
+
+</div>
 
 

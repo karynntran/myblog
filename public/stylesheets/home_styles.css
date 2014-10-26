@@ -1,0 +1,45 @@
+body {
+	background-image: url('/images/upfeathers.png');
+}
+
+li {
+	display: inline-block;
+	margin-top: 200px;
+}
+
+a {
+	color: white;
+	text-decoration: none; 
+	font-size: 20px;
+	font-family: arial;
+}
+
+.circle {
+	color: white;
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	line-height: 200px;
+	border: solid 10px #FDF9F5;
+}
+
+.homelink1 {
+	background-color: #000066;
+}
+
+.homelink2 {
+	background-color: #52CC7A;
+}
+
+.homelink3 {
+	background-color: #FF9966;
+}
+
+/*div nav*/
+
+.nav {
+	background-color: white;
+	height: 20px;
+	width: 100px;
+}

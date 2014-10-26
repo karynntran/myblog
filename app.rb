@@ -18,7 +18,7 @@ enable :sessions
 
 get '/' do
   @entries = Entry.all
-  erb :index
+  erb :index, :layout => false
 end
 
 ### USERS ###

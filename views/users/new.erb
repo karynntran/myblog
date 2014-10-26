@@ -1,19 +1,21 @@
+<div class="wrapper">
+
 <h3>Create New Account</h3>
 
 <% if @errors %>
-	<div class="errors">
-	  	<ul>
-	    	<% @errors.each do |error|  %>
-	     	<li>
-	      		<%= error %>
-	      	</li>
-	    	<% end %>
-	  	</ul>
-	</div>
+  <div class="errors">
+	    <ul>
+	      <% @errors.each do |error|  %>
+	       <li>
+	      	  <%= error %>
+	        </li>
+	      <% end %>
+	    </ul>
+  </div>
 <% end %>
 
 <form action="/users" method="post">
-	<input type ="text" name="user[username]" placeholder="username">
-	<input type ="password" name="password" placeholder="password">
-	<input type ="submit">
+  <input type ="text" name="user[username]" placeholder="username">
+  <input type ="password" name="password" placeholder="password">
+  <input type ="submit">
 </form>

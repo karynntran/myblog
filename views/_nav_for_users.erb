@@ -1,15 +1,16 @@
 <div>
-	<form action="/" method="get">
-		<input type="submit" value="Home">	
-	</form>
 
-	<form action="/sessions" method="post">
-		<input type="hidden" name="_method" value="delete">
-		<input type="submit" value="LogOut">	
-	</form>
+  <ul class="nav">
+    <li><a href="/">Home</a></li>
+    <li><a href="/entries">Entries</a></li>
+    <li>
+      <form action="/sessions" method="post">
+	  	  <input type="hidden" name="_method" value="delete">
+	  	  <input type="submit" value="LogOut">	
+  	  </form>
+    </li>
 
-	<form action="/entries" method="get">
-		<input type="submit" value="Entries">	
-	</form>
+  </ul>
+
 
 </div>
