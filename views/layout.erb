@@ -7,6 +7,15 @@
   <script src='/javascripts/jquery.js'></script>
   <script src='/javascripts/scripts.js'></script>
 </head>
+<header>
+	<div class ="nav">
+		<% if current_user %>
+			<%= erb :'_nav_for_users'%>
+		<% else %>
+			<%= erb :'_nav_for_non_users'%>
+		<% end %>
+	</div>	
+</header>
 <body>
   <%=yield%>
 </body>

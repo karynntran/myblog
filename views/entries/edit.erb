@@ -2,7 +2,7 @@
 
 <form action = '/entries/<%=@entry.id%>}' name="method" method="post">
   <input type ="hidden" name="_method" value="patch"/>
-  <p>Header:</p><input type ="text" name="entry[header]" placeholder="Add header here..."/>
-  <p>Post:</p><input type ="text" name="entry[post]" placeholder="Write entry here..."/>
+  <p>Header:</p><input type ="text" name="entry[header]" value="<%=@entry.header%>"/></textarea>
+  <p>Post:</p><input type ="text" name="entry[post]" value="<%=@entry.post%>"/>
   <input type ="submit" value="Submit">
 </form>	

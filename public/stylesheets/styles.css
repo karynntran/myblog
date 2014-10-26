@@ -1,3 +1,32 @@
 body {
-	
+	background-color: white;
+	font-family: tahoma;
+}
+
+
+.nav li {
+	display: inline;
+	text-align: right;
+	background-color: #00CC00;
+	color: white;
+	padding: 10px 30px;
+}
+
+/*forms*/
+.header_area {
+	width: 500px;
+	height: 2em;
+	vertical-align: top;
+	overflow: auto;
+}
+
+.post_area {
+	width: 500px;
+	height: 30em;
+	vertical-align: top;
+	overflow: auto;
+}
+
+.errors {
+	color: red;
 }

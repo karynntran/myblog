@@ -4,9 +4,12 @@ Bundler.require
 ### CONNECTION ###
 require_relative 'connection.rb'
 
-### CONNECTION ###
+### MODELS ###
 require_relative 'models/entry'
 require_relative 'models/user'
+
+### HELPERS ###
+require './helpers/application_helper'
 
 ### SESSIONS ###
 enable :sessions
@@ -18,6 +21,24 @@ get '/' do
   erb :index
 end
 
+### USERS ###
+get '/users/new' do
+  erb :'users/new'
+end
+
+post '/users' do
+  @user = User.new(params[:user])
+  @user.password = params[:password]
+
+  if @user.valid?
+    @user.save!
+    redirect '/sessions/new'
+  else
+    @errors = @user.errors.full_messages
+    erb :'users/new'
+  end
+
+end
 
 ### SESSIONS ###
 
@@ -26,7 +47,7 @@ get '/sessions/new' do
 end
 
 post '/sessions' do
-  user = User.find_by({username: params[:username]})
+  redirect '/' unless user = User.find_by({username: params[:username]})
   if user.password == params[:password]
     session[:current_user] = user.id
     redirect '/entries'
@@ -57,16 +78,13 @@ post '/entries' do
 end
 
 get '/entries/:id/edit' do
-  if session[:current_user]
-    @user = User.find(session[:current_user])
-    @entry = Entry.find(params[:id])
-    erb :'entries/edit'
-  else
-    redirect '/sessions/new'
-  end
+  @entry = Entry.find(params[:id])
+
+  erb :'/entries/edit'
 end
 
 patch '/entries/:id' do
+  authenticate_admin!
   entry = Entry.find(params[:id])
   entry.update(params[:entry])
   redirect '/entries/#{entry.id}'
@@ -74,15 +92,19 @@ end
 
 get '/entries/:id' do
   @entry = Entry.find(params[:id])
+  @user = current_user
+
+  begin
+    @user.authenticate_admin
+  rescue User::AuthenticateAdmin => e
+    @error = e
+  end
+
   erb :'entries/show'
 end
 
 delete '/entries/:id' do
-  if session[:current_user]
-    @user = User.find(session[:current_user])
-    entry = Entry.destroy(params[:id])
-    redirect '/entries'
-  else
-    redirect '/sessions/new'
-  end
+  authenticate_admin!
+  Entry.delete(params[:id])
+  redirect '/entries'
 end
