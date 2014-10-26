@@ -66,6 +66,11 @@ end
 
 get '/entries' do
   @entries = Entry.all
+
+  @sorted_entries = @entries.sort_by do |entry|
+    entry[:id]
+  end
+
   erb :'entries/index'
 end
 

@@ -1,11 +1,18 @@
 <h1>All Entries</h1>
 
-<table>
-  <%@entries.each do |entry| %>
-	  <tr>
-		  <td><a href="/entries/<%=entry.id%>"><%=entry.header%></a></td>
-		  <td><%=entry.post%></td>
-		  <td><%=entry.updated_at%></td>
-	  </tr>
+<p><a class="nav" href="/entries/new">Add new entry?</a></p><br>
+
+  <%@sorted_entries.each do |entry| %>
+	<div class="blog_post"> 
+
+	  	<div class="photo">
+	  	  <img src ="<%=entry.photo_link%>" width="150px" height="125px">
+	    </div>
+
+	    <div class="entry_content">
+	  	  <a href="/entries/<%=entry.id%>"><%=entry.header%></a>
+	    </div>
+	</div>
+	
   <%end%>
-<table>
+

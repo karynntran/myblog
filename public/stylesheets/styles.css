@@ -49,6 +49,37 @@ body {
 	font-size: 12px;
 	color: gray;
 }
+
+/*blog index*/
+
+.blog_post {
+	display: inline-table;
+	width:150px;
+	height:200px;
+	border: 1px solid tan;
+	margin: 0 5px;
+	padding: 5px;
+}
+
+.photo {
+	width:150px;
+	height:125px;
+	background-size: auto;
+	background-color: black;
+	padding: 5px;
+}
+
+
+.entry_content {
+	width:150px;
+	height:75px;
+	background-color: white;
+	font-size: 15px;
+	padding: 5px;
+	text-decoration: none;
+}
+
+
 /*entries*/
 
 .header {
@@ -58,6 +89,12 @@ body {
 }
 
 .post {
+	text-decoration: bold;
+	font-size: 18px;
+	color: green;
+}
+
+.picture {
 	text-decoration: bold;
 	font-size: 18px;
 	color: green;
