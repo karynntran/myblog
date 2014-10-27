@@ -67,9 +67,7 @@ end
 get '/entries' do
   @entries = Entry.all
 
-  @sorted_entries = @entries.sort_by do |entry|
-    entry[:id]
-  end
+  @sorted_entries = @entries.sort_by { |entry| entry[:id] }.reverse!
 
   erb :'entries/index'
 end
