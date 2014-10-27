@@ -57,7 +57,7 @@ body {
 	width:150px;
 	height:200px;
 	border: 1px solid tan;
-	margin: 0 5px;
+	margin: 5px 5px;
 	padding: 5px;
 }
 
@@ -65,7 +65,7 @@ body {
 	width:150px;
 	height:125px;
 	background-size: auto;
-	background-color: black;
+	background-color: white;
 	padding: 5px;
 }
 
