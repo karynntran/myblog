@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   class AuthenticateAdmin < StandardError
   end
 
-    def authenticate_admin
+    def admin_error
       if self.username != "karynn"
         raise AuthenticateAdmin, "**You must be an admin to edit this post. Log in <a href='/sessions/new'>here</a>**"
       end

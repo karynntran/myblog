@@ -6,13 +6,13 @@ body {
 /*content*/
 
 .wrapper {
-	background-image: url('/images/upfeathers.png');
+	background-image: url('/images/tree_bark.png');
 	min-height: 300px;
 	height: auto;
 	width: 800px;
 	padding: 15px;
 	margin: 60px auto;
-	border: solid 5px #FDF9F5;
+	border: solid 1px lightgray;
 }
 
 /*navigation*/
@@ -56,9 +56,10 @@ body {
 	display: inline-table;
 	width:150px;
 	height:200px;
-	border: 1px solid tan;
-	margin: 5px 5px;
+	border: 1px solid #52CC7A;
+	margin: 5px;
 	padding: 5px;
+	border-radius: 15px 0 15px 0;
 }
 
 .photo {
@@ -67,8 +68,8 @@ body {
 	background-size: auto;
 	background-color: white;
 	padding: 5px;
+	border-radius: 15px 0 0 0;
 }
-
 
 .entry_content {
 	width:150px;
@@ -77,6 +78,7 @@ body {
 	font-size: 15px;
 	padding: 5px;
 	text-decoration: none;
+	border-radius: 0 0 15px 0;
 }
 
 
@@ -124,4 +126,25 @@ body {
 .errors {
 	color: gray;
 	font-size: 10px;
+}
+
+.delete {
+	background-color: transparent;
+	border: none;
+	text-decoration: underline;
+	color: darkgray;
+
+	display: inline-block;
+	padding: 0 5px;
+}
+
+.edit_delete {
+	text-decoration: none;
+	background-color: #FF9966;
+	color: white;
+	padding: 5px 10px;
+	border-radius: 8px;
+	font-size: 12px;
+	font-family: 'Comfortaa', cursive;
+	border: none;
 }

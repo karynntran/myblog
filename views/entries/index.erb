@@ -1,13 +1,18 @@
 <h1>All Entries</h1>
 
-<p><a class="nav" href="/entries/new">Add new entry?</a></p><br>
+<% if @current_user.username == "karynn" %>
+	<p><a class="nav" href="/entries/new">Add new entry?</a></p><br>
+<% else %>
+	<p>
+<% end %>
+
 
 <center>
   <%@sorted_entries.each do |entry| %>
 	<div class="blog_post"> 
 
-	  	<div class="photo">
-	  	  <img src ="<%=entry.photo_link%>" width="150px" height="125px">
+	  	<div class="photo_index">
+	  	  <img class ="photo" src ="<%=entry.photo_link%>" width="150px" height="125px">
 	    </div>
 
 	    <div class="entry_content">

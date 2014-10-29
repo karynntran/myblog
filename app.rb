@@ -1,114 +1,116 @@
-require 'bundler'
-Bundler.require
+# # require 'bundler'
+# # Bundler.require
 
-### CONNECTION ###
-require_relative 'connection.rb'
+# # ### CONNECTION ###
+# # require_relative 'connection.rb'
 
-### MODELS ###
-require_relative 'models/entry'
-require_relative 'models/user'
+# # ### MODELS ###
+# # require_relative 'models/entry'
+# # require_relative 'models/user'
 
-### HELPERS ###
-require './helpers/application_helper'
+# # ### HELPERS ###
+# # require './helpers/application_helper'
 
-### SESSIONS ###
-enable :sessions
+# # ### SESSIONS ###
+# # enable :sessions
 
-### LANDING PAGE ###
+# # ### LANDING PAGE ###
 
-get '/' do
-  @entries = Entry.all
-  erb :index, :layout => false
-end
+# # get '/' do
+# #   @entries = Entry.all
+# #   erb :index, :layout => false
+# # end
 
-### USERS ###
-get '/users/new' do
-  erb :'users/new'
-end
+# ### USERS ###
+# # get '/users/new' do
+# #   erb :'users/new'
+# # end
 
-post '/users' do
-  @user = User.new(params[:user])
-  @user.password = params[:password]
+# # post '/users' do
+# #   @user = User.new(params[:user])
+# #   @user.password = params[:password]
 
-  if @user.valid?
-    @user.save!
-    redirect '/sessions/new'
-  else
-    @errors = @user.errors.full_messages
-    erb :'users/new'
-  end
+# #   if @user.valid?
+# #     @user.save!
+# #     redirect '/sessions/new'
+# #   else
+# #     @errors = @user.errors.full_messages
+# #     erb :'users/new'
+# #   end
 
-end
+# # end
 
-### SESSIONS ###
+# ### SESSIONS ###
 
-get '/sessions/new' do
-  @current_user
-  erb :'sessions/new'
-end
+# # get '/sessions/new' do
+# #   erb :'sessions/new'
+# # end
 
-post '/sessions' do
-  redirect '/' unless user = User.find_by({username: params[:username]})
-  if user.password == params[:password]
-    session[:current_user] = user.id
-    redirect '/entries'
-  else
-    redirect '/sessions/new'
-  end
-end
+# # post '/sessions' do
+# #   redirect '/' unless user = User.find_by({username: params[:username]})
+# #   if user.password == params[:password]
+# #     session[:current_user] = user.id
+# #     redirect '/entries'
+# #   else
+# #     redirect '/sessions/new'
+# #   end
+# # end
 
-delete '/sessions' do
-  session[:current_user] = nil
-  redirect '/'
-end
+# # delete '/sessions' do
+# #   session[:current_user] = nil
+# #   redirect '/'
+# # end
 
-### ENTRIES CRUD ###
+# ### ENTRIES CRUD ###
 
-get '/entries' do
-  @entries = Entry.all
+# get '/entries' do
+#   current_user
+#   @entries = Entry.all
+#   @sorted_entries = @entries.sort_by { |entry| entry[:id] }.reverse!
 
-  @sorted_entries = @entries.sort_by { |entry| entry[:id] }.reverse!
+#   erb :'entries/index'
+# end
 
-  erb :'entries/index'
-end
+# get '/entries/new' do
+#   current_user
+#   erb :'entries/new'
+# end
 
-get '/entries/new' do
-  erb :'entries/new'
-end
+# post '/entries' do
+#   entry = Entry.create(params[:entry])
+#   redirect '/entries'
+# end
 
-post '/entries' do
-  entry = Entry.create(params[:entry])
-  redirect '/entries'
-end
+# get '/entries/:id/edit' do
+#   @entry = Entry.find(params[:id])
 
-get '/entries/:id/edit' do
-  @entry = Entry.find(params[:id])
+#   erb :'/entries/edit'
+# end
 
-  erb :'/entries/edit'
-end
+# patch '/entries/:id' do
+#   entry = Entry.find(params[:id])
+#   entry.update(params[:entry])
+#   redirect '/entries/#{entry.id}'
+# end
 
-patch '/entries/:id' do
-  authenticate_admin!
-  entry = Entry.find(params[:id])
-  entry.update(params[:entry])
-  redirect '/entries/#{entry.id}'
-end
+# get '/entries/:id' do
+#   user = current_user
+#   @entry = Entry.find(params[:id])
 
-get '/entries/:id' do
-  @entry = Entry.find(params[:id])
-  @user = current_user
+#   begin
+#     user.admin_error
+#   rescue User::AuthenticateAdmin => e
+#     @error = e
+#   end
 
-  begin
-    @user.authenticate_admin
-  rescue User::AuthenticateAdmin => e
-    @error = e
-  end
+#   erb :'entries/show'
+# end
 
-  erb :'entries/show'
-end
+# delete '/entries/:id' do
+#   Entry.delete(params[:id])
+#   redirect '/entries'
+# end
 
-delete '/entries/:id' do
-  authenticate_admin!
-  Entry.delete(params[:id])
-  redirect '/entries'
-end
+# get '/aboutme' do
+#   erb :'users/aboutme'
+# end

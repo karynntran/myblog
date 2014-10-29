@@ -25,7 +25,7 @@ namespace :db do
     require_relative 'connection'
     require_relative 'models/user'
 
-    User.create({username: "karynn", password_hash: "password"})
+    User.new({username: "karynn", password_hash: "password"})
 
   end
 

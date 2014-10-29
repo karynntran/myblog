@@ -9,14 +9,14 @@ module Sinatra
       end
     end
 
-    # def authenticate!
-    #   redirect '/' unless current_user
-    # end
+    def authenticate
+      redirect '/sessions/new' unless current_user
+    end
 
     def authenticate_admin!
       redirect '/' unless current_user.username == "karynn"
     end
 
   end
-  helpers AuthenticationHelper
+
 end
