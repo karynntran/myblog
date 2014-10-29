@@ -1,8 +1,11 @@
 require 'bundler'
 Bundler.require
 require 'sinatra/activerecord/rake'
-require_relative 'connection.rb'
 
+ActiveRecord::Base.establish_connection({
+  adapter: 'postgresql',
+  database: 'restaurant_db'
+})
 
 namespace :db do
   desc "Create blog_db database"
@@ -10,6 +13,14 @@ namespace :db do
     conn = PG::Connection.open()
     conn.exec('CREATE DATABASE blog_db;')
     conn.close
+  end
+
+  desc "Connection"
+  task :connect_db do
+    ActiveRecord::Base.establish_connection({
+    adapter: 'postgresql',
+    database: 'blog_db'
+  })
   end
 
   desc "Drop blog_db database"
