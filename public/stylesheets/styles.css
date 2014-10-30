@@ -58,7 +58,7 @@ body {
 	height:200px;
 	border: 1px solid #52CC7A;
 	margin: 5px;
-	padding: 5px;
+	padding: 5px 5px 5px 5px;
 	border-radius: 15px 0 15px 0;
 }
 
@@ -79,6 +79,7 @@ body {
 	padding: 5px;
 	text-decoration: none;
 	border-radius: 0 0 15px 0;
+	margin-top: -5px;
 }
 
 
