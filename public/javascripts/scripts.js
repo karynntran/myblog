@@ -1,5 +1,10 @@
 
-$('.homelink2').click(function() {
-  $('#user-action').Load('<%= erb :_nav_for_users %>')
+$(document).ready(function(){
+  $(".circle").mouseover(function(){
+    $(this).css("border-color","green");
+  });
 });
-
+  $(".circle").mouseout(function(){
+    $(".homelink1").css("border-color","white");
+  });
+});

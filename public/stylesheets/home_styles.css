@@ -66,3 +66,12 @@ a {
 	height: 20px;
 	width: 100px;
 }
+
+/*homepage div*/
+
+#user-action {
+	border: 1px black lightgray;
+	width: 300px;
+	height: 100px;
+	margin: 0 auto;
+}
