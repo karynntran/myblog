@@ -1,19 +1,14 @@
 
-<table>
-	<tr>
-		<td><img class ="entry_photo" src = "<%= @entry.photo_link %>" width="auto" height="300px"/></td>
-	</tr>
+<img class ="entry_photo" src = "<%= @entry.photo_link %>" width="auto" height="300px"/></td>
+<p class="header"><%= @entry.header %></p>
 
-	<tr>
-		<td><p class="header"><%= @entry.header %></p></td>
-	</tr>
-	<tr>
-		<td><%= @entry.post %></p></td>
-	</tr>
-	<tr>	
-		<td><%= @entry.updated_at %></td>
-	</tr>
-</table>
+<div id="show-entry">
+	<td><%= @entry.post %></p>
+	<td><%= @entry.updated_at %></td>
+</div>
+
+
+
 
 <% if @error %>
 	<span class ="errors"><%= @error %></span>

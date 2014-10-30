@@ -1,16 +1,16 @@
-class EntriesController < Sinatra::Base
-  helpers Sinatra::AuthenticationHelper
+class EntriesController < ApplicationController
+  # helpers Sinatra::AuthenticationHelper
 
-  ActiveRecord::Base.establish_connection({
-    adapter: 'postgresql',
-    database: 'blog_db'
-  })
+  # ActiveRecord::Base.establish_connection({
+  #   adapter: 'postgresql',
+  #   database: 'blog_db'
+  # })
 
-  set :views, File.expand_path('../../views',__FILE__)
+  # set :views, File.expand_path('../../views',__FILE__)
 
-  set :public_folder, File.expand_path('../../public',__FILE__)
+  # set :public_folder, File.expand_path('../../public',__FILE__)
 
-  enable :sessions, :method_override
+  # enable :sessions, :method_override
 
   ###ROUTES###
 
@@ -23,8 +23,11 @@ class EntriesController < Sinatra::Base
   end
 
   get '/new' do
-    current_user
-    erb :'entries/new'
+    if current_user
+      erb :'entries/new'
+    else
+      redirect '/users/new'
+    end
   end
 
   post '/' do

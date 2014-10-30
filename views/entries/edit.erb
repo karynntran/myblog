@@ -3,8 +3,8 @@
 <form action = '/entries/<%=@entry.id%>' name="method" method="post">
   <input type ="hidden" name="_method" value="patch"/>
   <p class="picture">Photo:</p><input type="text" name="entry[photo_link]" value="<%=@entry.photo_link%>"/>
-  <p class="header">Header:</p><textarea name="entry[header]" value="<%=@entry.header%>"/>
-  <p class="post">Post:</p><textarea ="text" name="entry[post]" value="<%=@entry.post%>"/>
+  <p class="header">Header:</p><textarea rows="1" cols="50" name="entry[header]"><%=@entry.header%></textarea>
+  <p class="post">Post:</p><textarea rows="25" cols="50" name="entry[post]"><%=@entry.post%></textarea>
   <input type ="submit" value="Submit">
 </form>	
 
