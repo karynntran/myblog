@@ -4,7 +4,7 @@ require 'sinatra/activerecord/rake'
 
 ActiveRecord::Base.establish_connection({
   adapter: 'postgresql',
-  database: 'restaurant_db'
+  database: 'blog_db'
 })
 
 namespace :db do
