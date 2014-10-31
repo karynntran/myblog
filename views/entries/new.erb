@@ -1,8 +1,15 @@
 <h1>Add New Entry</h1>
 <form action = '/entries' name="method" method="post">
   <p class="picture">Photo:</p><input type="text" name="entry[photo_link]" placeholder="Add photo here..."/>
+
   <p class="header">Header:</p><textarea rows="1" cols="50" name="entry[header]"></textarea>
+
   <p class="post">Post:</p><textarea rows="25" cols="50" name="entry[post]"></textarea>
-  <p class="post">Tag(s):</p><textarea rows="2" cols="50" name="tag[body]"></textarea>
-  <input type ="submit" value="Submit">
+
+  <p class="post">Tag(s):</p><textarea rows="2" cols="50" name="tags[body]"></textarea>
+
+  <input type="hidden" name="tags[entry_id]">
+
+ <input type="submit" value="Submit">
 </form>	
+

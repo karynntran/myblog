@@ -1,10 +1,4 @@
 class Tag < ActiveRecord::Base
-  belongs_to :entries
-  belongs_to :users
-
-  def tags
-    self.body.scan(/#(\w+)/).flatten
-  end
-
+  has_and_belongs_to_many :entries
 
 end
