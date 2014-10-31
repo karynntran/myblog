@@ -6,4 +6,5 @@ class Tag < ActiveRecord::Base
     self.body.scan(/#(\w+)/).flatten
   end
 
+
 end

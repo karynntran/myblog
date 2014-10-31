@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   include BCrypt
   has_many :entries
+  has_many :tags
 
   validates :username, :password_hash, presence: true
   validates_uniqueness_of :username

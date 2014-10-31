@@ -1,8 +1,6 @@
 class SessionsController < ApplicationController
 
 
-  ###ROUTES###
-
   get '/new' do
     erb :'sessions/new'
   end

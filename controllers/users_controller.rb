@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-  ###ROUTES###
 
   get '/new' do
     erb :'users/new'

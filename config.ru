@@ -6,6 +6,7 @@ Dir.glob('./{helpers,models,controllers}/*.rb').each do |file|
 end
 
 
+map('/tags'){ run TagsController }
 
 map('/entries'){ run EntriesController }
 

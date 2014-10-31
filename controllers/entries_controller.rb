@@ -18,6 +18,7 @@ class EntriesController < ApplicationController
 
   post '/' do
     entry = Entry.create(params[:entry])
+    tag = Tag.create(params[:tag])
     redirect '/entries'
   end
 
