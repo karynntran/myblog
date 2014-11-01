@@ -20,10 +20,15 @@ class EntriesController < ApplicationController
   end
 
   post '/' do
+    # binding.pry
     entry = Entry.create(params[:entry])
-    tag = Tag.create(params[:tag])
+    # tag = Tag.create(params[:tag])
+    tag_string = params[:tag][:body].split(/\s|,\s|\s|,/)
 
-    entry.tags << tag
+    tag_string.each do |tag|
+      each_tag = Tag.create(body: tag)
+      entry.tags << each_tag
+    end
 
     redirect '/entries'
   end
