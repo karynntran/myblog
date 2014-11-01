@@ -12,7 +12,8 @@
 		  <img class ="photo" src ="<%=@sorted_entries[0].photo_link%>" width="150px" height="125px">
 		</div>
 
-		<p><%= @sorted_entries[0].header %></p>
+		<p>
+			<a href="/entries/<%= @sorted_entries[0].id %>"><%= @sorted_entries[0].header %></a></p>
 		<p><%= @sorted_entries[0].post %></p>
 
 	</div>

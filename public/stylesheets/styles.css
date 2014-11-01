@@ -57,9 +57,9 @@ body {
 	width: 750px;
 	background-color: white;
 	opacity: .5px;
-	border-radius: 10px;
+	border-radius: 15px 0 15px 0;;
 	margin-bottom: 10px;
-	padding: 5px 0;
+	padding: 10px;
 	text-align: left;
 	border: 1px solid lightgray;
 }

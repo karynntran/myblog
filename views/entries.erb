@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <title>karynn who codes</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+  <link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+  <script src='/javascripts/jquery.js'></script>
+  <script src='/javascripts/scripts.js'></script>
+  
+</head>
+<header>
+	<div class ="nav">
+		
+		<% if current_user %>
+			<%= erb :'_nav_for_users' %>
+		<% else%>
+			<%= erb :'_nav_for_non_users' %>
+		<% end %>
+
+	</div>	
+</header>
+<body>
+
+    <%=yield%>
+
+</body>
+</html>
