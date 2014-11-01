@@ -23,12 +23,12 @@ class EntriesController < ApplicationController
 
     entry.tags << tag
 
-
     redirect '/entries'
   end
 
   get '/:id/edit' do
     @entry = Entry.find(params[:id])
+
 
     erb :'/entries/edit'
   end
@@ -41,8 +41,10 @@ class EntriesController < ApplicationController
   end
 
   get '/:id' do
+    # binding.pry
     user = current_user
     @entry = Entry.find(params[:id])
+    @tags = @entry.tags
 
     begin
       user.admin_error
