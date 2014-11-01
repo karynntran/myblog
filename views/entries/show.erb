@@ -11,13 +11,9 @@
   <p><%= @entry.post %></p>
   <p><%= @entry.created_at %></p>
 
-  <% @tags.each do |tag| %>
-    <p><%= tag.body %></p>
-  <% end %>
+  <p>Tags: <%= @all_tags %><p>
+
 </div>
-
-
-
 
 
 <% if @error %>

@@ -56,6 +56,8 @@ class EntriesController < ApplicationController
     user = current_user
     @entry = Entry.find(params[:id])
     @tags = @entry.tags
+    @tag_body = @tags.map { |tag| tag.body }
+    @all_tags = @tag_body.join(", ")
 
 
     begin
