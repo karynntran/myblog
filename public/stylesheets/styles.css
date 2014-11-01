@@ -52,6 +52,25 @@ body {
 
 /*blog index*/
 
+.current-entry {
+	height: 200px;
+	width: 750px;
+	background-color: white;
+	opacity: .5px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	padding: 5px 0;
+	text-align: left;
+	border: 1px solid lightgray;
+}
+
+.current-photo {
+	float: left;
+	height: 200px;
+	width: auto;
+	margin-right: 5px;
+}
+
 .blog_post {
 	display: inline-table;
 	width:150px;

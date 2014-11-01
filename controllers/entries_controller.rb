@@ -5,7 +5,9 @@ class EntriesController < ApplicationController
     @entries = Entry.all
     @sorted_entries = @entries.sort_by { |entry| entry[:id] }.reverse!
 
-    erb :'entries/index'
+
+  erb :'entries/index'
+
   end
 
   get '/new' do

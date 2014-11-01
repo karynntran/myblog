@@ -1,7 +1,8 @@
+
 <% if @entry.photo_link.empty? %>
-	<p>
+  <p>
 <% else %>
-	<img class ="entry_photo" src = "<%= @entry.photo_link %>" width="auto" height="300px"/>
+  <img class ="entry_photo" src = "<%= @entry.photo_link %>" width="auto" height="300px"/>
 <% end %>
 
 <p class="header"><%= @entry.header %></p>
@@ -11,9 +12,10 @@
   <p><%= @entry.created_at %></p>
 
   <% @tags.each do |tag| %>
-	<p><%= tag.body %></p>
+    <p><%= tag.body %></p>
   <% end %>
 </div>
+
 
 
 
