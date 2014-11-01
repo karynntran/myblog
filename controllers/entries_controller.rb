@@ -28,7 +28,7 @@ class EntriesController < ApplicationController
 
   get '/:id/edit' do
     @entry = Entry.find(params[:id])
-
+    @tags = @entry.tags
 
     erb :'/entries/edit'
   end

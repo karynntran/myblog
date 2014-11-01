@@ -3,13 +3,12 @@
 <p class="header"><%= @entry.header %></p>
 
 <div id="show-entry">
-	<td><%= @entry.post %></p>
-	<td><%= @entry.updated_at %></td>
-	<td>
-		<% @tags.each do |tag| %>
-			<%= tag.body %>
-		<% end %>
-	</td>
+	<p><%= @entry.post %></p>
+	<p><%= @entry.updated_at %></p>
+	
+	<% @tags.each do |tag| %>
+	<p><%= tag.body %></p>
+	<% end %>
 </div>
 
 
