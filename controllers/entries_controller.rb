@@ -19,7 +19,11 @@ class EntriesController < ApplicationController
 
   post '/' do
     entry = Entry.create(params[:entry])
-    entry.tags << Tag.create(params[:tag])
+    tag = Tag.create(params[:tag])
+
+    entry.tags << tag
+
+
     redirect '/entries'
   end
 
@@ -33,15 +37,12 @@ class EntriesController < ApplicationController
     entry = Entry.find(params[:id])
     entry.update(params[:entry])
 
-    tag = Tag.find(params[:id])
-    tag.update(params[:tag])
     redirect '/entries/#{entry.id}'
   end
 
   get '/:id' do
     user = current_user
     @entry = Entry.find(params[:id])
-    @tag = Tag.where(entry_id: params[:id])
 
     begin
       user.admin_error
