@@ -50,6 +50,7 @@ class EntriesController < ApplicationController
     @entry = Entry.find(params[:id])
     @tags = @entry.tags
 
+
     begin
       user.admin_error
     rescue User::AuthenticateAdmin => e

@@ -1,14 +1,18 @@
+<% if @entry.photo_link.empty? %>
+	<p>
+<% else %>
+	<img class ="entry_photo" src = "<%= @entry.photo_link %>" width="auto" height="300px"/>
+<% end %>
 
-<img class ="entry_photo" src = "<%= @entry.photo_link %>" width="auto" height="300px"/></td>
 <p class="header"><%= @entry.header %></p>
 
 <div id="show-entry">
-	<p><%= @entry.post %></p>
-	<p><%= @entry.updated_at %></p>
-	
-	<% @tags.each do |tag| %>
+  <p><%= @entry.post %></p>
+  <p><%= @entry.created_at %></p>
+
+  <% @tags.each do |tag| %>
 	<p><%= tag.body %></p>
-	<% end %>
+  <% end %>
 </div>
 
 
