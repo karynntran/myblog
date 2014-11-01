@@ -9,7 +9,10 @@
   
   <p class="post">Post:</p><textarea rows="25" cols="50" name="entry[post]"><%=@entry.post%></textarea>
   
-  <p class="post">Tag(s):</p><textarea rows="2" cols="50" name="tags[body]"> <%=@tag.body%> </textarea>
+  <% @tags.each do |tag| %>
+  	 <p class="post">Tag(s):</p>
+  	 <textarea rows="2" cols="50" name="tags[body]"><%= tag.body %></textarea>
+  <% end %>
 
   <input type ="submit" value="Submit">
 </form>	

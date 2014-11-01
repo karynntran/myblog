@@ -37,11 +37,15 @@ class EntriesController < ApplicationController
     entry = Entry.find(params[:id])
     entry.update(params[:entry])
 
+    tags = entry.tags
+    tags.each do |tag|
+      tag.update(params[:tags])
+    end
+
     redirect '/entries/#{entry.id}'
   end
 
   get '/:id' do
-    # binding.pry
     user = current_user
     @entry = Entry.find(params[:id])
     @tags = @entry.tags
