@@ -1,43 +1,50 @@
-<h1>All Entries</h1>
-
-<% if @current_user.username == "karynn" %>
-	<p><a class="nav" href="/entries/new">Add new entry?</a></p><br>
-<% else %>
-	<p>
-<% end %>
-
 <center>
-	<div class="current-entry">
-		
-		<% if @sorted_entries[0].photo_link.empty? %>
-		  <p>
-		<% else %>
-		  <div class="current-photo">
-		    <img class ="photo" src ="<%=@sorted_entries[0].photo_link%>" width="150px" height="125px">
-		  </div>
-		<% end %>
+<div class="entries-everything">
 
+
+<div class="current-entry">
+	<h1>All Entries</h1>
+
+	<% if @current_user.username == "karynn" %>
+		<p><a class="nav" href="/entries/new">Add new entry?</a></p><br>
+	<% else %>
 		<p>
-		  <a href="/entries/<%= @sorted_entries[0].id %>"><%= @sorted_entries[0].header %></a>
-		  </p>
-		<p><%= @sorted_entries[0].post %></p>
+	<% end %>
 
+	
+	
+	<% if @sorted_entries[0].photo_link.empty? %>
+	  <p>
+	<% else %>
+	  <div class="current-photo">
+	    <img class ="photo" src ="<%=@sorted_entries[0].photo_link%>" width="150px" height="125px">
+	  </div>
+	<% end %>
+
+	<p>
+	  <a href="/entries/<%= @sorted_entries[0].id %>"><%= @sorted_entries[0].header %></a>
+	  </p>
+	<p><%= @sorted_entries[0].post %></p>
+
+</div>
+
+<div class="all-entries">
+	<p class="header"> See More </p>
+  	<%@sorted_entries[1..-1].each do |entry| %>
+	<div class="blog_post"> 
+
+	  	<div class="photo_index">
+	  	  <img class ="photo" src ="<%=entry.photo_link%>" width="150px" height="125px">
+	    </div>
+
+	    <div class="entry_content">
+	  	  <a href="/entries/<%=entry.id%>"><%=entry.header%></a>
+	    </div>
 	</div>
+	
+  <%end%>
+</div>
 
-	<div class="all-entries">
-		<p class="header"> See More </p>
-	  <%@sorted_entries[1..-1].each do |entry| %>
-		<div class="blog_post"> 
 
-		  	<div class="photo_index">
-		  	  <img class ="photo" src ="<%=entry.photo_link%>" width="150px" height="125px">
-		    </div>
-
-		    <div class="entry_content">
-		  	  <a href="/entries/<%=entry.id%>"><%=entry.header%></a>
-		    </div>
-		</div>
-		
-	  <%end%>
-  </div>
-<center>
+</div>
+</center>

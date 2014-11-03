@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
   <title>karynn who codes</title>
   <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/entries_index.css">
+
   <link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
   <script src='/javascripts/jquery.js'></script>
   <script src='/javascripts/scripts.js'></script>
@@ -22,7 +24,54 @@
 </header>
 <body>
 
-    <%=yield%>
+<center>
+<div class="clearfix entries-everything">	
+
+  <h1>All Entries</h1>
+
+  <% if @current_user.username == "karynn" %>
+	  <p><a class="nav" href="/entries/new">Add new entry?</a></p><br>
+  <% else %>
+	  <p>
+  <% end %>
+
+	<div class="current-entry">
+		
+		<% if @sorted_entries[0].photo_link.empty? %>
+		  <p>
+		<% else %>
+		  <div class="current-photo">
+		    <img class ="photo" src ="<%=@sorted_entries[0].photo_link%>" width="150px" height="125px">
+		  </div>
+		<% end %>
+
+		<p>
+		  <a href="/entries/<%= @sorted_entries[0].id %>"><%= @sorted_entries[0].header %></a>
+		  </p>
+		<p><%= @sorted_entries[0].post %></p>
+
+	</div>
+
+	<div class="all-entries">
+		<p class="header"> See More </p>
+	  <%@sorted_entries[1..-1].each do |entry| %>
+		<div class="blog_post"> 
+
+		  	<div class="photo_index">
+		  	  <img class ="photo" src ="<%=entry.photo_link%>" width="150px" height="125px">
+		    </div>
+
+		    <div class="entry_content">
+		  	  <a href="/entries/<%=entry.id%>"><%=entry.header%></a>
+		    </div>
+		</div>
+		
+	  <%end%>
+  </div>
+</div>
+<center>
+
+
 
 </body>
 </html>

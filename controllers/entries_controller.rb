@@ -6,7 +6,7 @@ class EntriesController < ApplicationController
     @sorted_entries = @entries.sort_by { |entry| entry[:id] }.reverse!
 
 
-  erb :'entries/index'
+  erb :'entries', :layout => false
 
   end
 

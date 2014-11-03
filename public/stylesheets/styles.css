@@ -52,7 +52,7 @@ body {
 
 /*blog index*/
 
-.current-entry {
+/*.current-entry {
 	height: 200px;
 	width: 750px;
 	background-color: white;
@@ -62,7 +62,7 @@ body {
 	padding: 10px;
 	text-align: left;
 	border: 1px solid lightgray;
-}
+}*/
 
 .current-photo {
 	float: left;
@@ -178,3 +178,4 @@ body {
 input {
 	padding: 10px;
 }
+
