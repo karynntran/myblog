@@ -50,44 +50,7 @@ body {
 	color: gray;
 }
 
-/*blog index*/
 
-
-.current-photo {
-	height: auto;
-	width: 250;
-	margin: 10px 15px 10px 0;
-}
-
-.blog_post {
-	display: inline-table;
-	width:125px;
-	height:160px;
-	border: 1px solid #52CC7A;
-	margin: 10px;
-	padding: 5px 5px 5px 5px;
-	border-radius: 15px 0 15px 0;
-}
-
-.photo {
-	width:125px;
-	height:100px;
-	background-size: auto;
-	background-color: white;
-	padding: 5px;
-	border-radius: 15px 0 0 0;
-}
-
-.entry_content {
-	width:125px;
-	height:60px;
-	background-color: white;
-	font-size: 13px;
-	padding: 5px;
-	text-decoration: none;
-	border-radius: 0 0 15px 0;
-	margin-top: -5px;
-}
 
 
 /*entry headers*/
@@ -98,17 +61,6 @@ body {
 	color: green;
 }
 
-.post {
-	text-decoration: bold;
-	font-size: 18px;
-	color: green;
-}
-
-.picture {
-	text-decoration: bold;
-	font-size: 18px;
-	color: green;
-}
 
 /*entry content*/
 #show-entry {
