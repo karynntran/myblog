@@ -36,8 +36,8 @@ class EntriesController < ApplicationController
   get '/:id/edit' do
     @entry = Entry.find(params[:id])
     @tags = @entry.tags
-    @tag_body = @tags.map { |tag| tag.body }
-    @all_tags = @tag_body.join(", ")
+    # @tag_body = @tags.map { |tag| tag.body }
+    # @all_tags = @tag_body.join(", ")
 
     erb :'/entries/edit'
   end
@@ -71,6 +71,7 @@ class EntriesController < ApplicationController
     erb :'entries/show'
   end
 
+##DELETE ENTRIES##
   delete '/:id' do
     Entry.delete(params[:id])
     redirect '/entries'

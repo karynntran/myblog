@@ -13,6 +13,13 @@
   <% @tags.each do |tag| %>
     <p class="post">Tag(s):</p>
       <textarea rows="2" cols="50" name="tags[body]"><%= tag.body %></textarea>
+
+
+    <form action= '/tags/<%=tag.id%>' name="method" method="post">
+        <input type ="hidden" name="tags[id]" value="<%=tag.id%>"/>
+        <input type="hidden" name="_method" value="delete"/>
+        <input type="submit" value="X"/>
+    </form>  
   <% end %>
 
   <input type ="submit" value="Submit">
