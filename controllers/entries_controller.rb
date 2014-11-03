@@ -77,4 +77,5 @@ class EntriesController < ApplicationController
     redirect '/entries'
   end
 
+
 end
