@@ -3,7 +3,8 @@
 	width: 800px;
 	padding: 15px;
 	margin: 60px auto;
-	border: solid 1px lightgray;
+	border: 1px solid lightgray;
+
 }
 .current-entry {
 	background-color: lightgray;
@@ -16,6 +17,7 @@
 	float:left;
 	text-align: left;
 }
+
 
 .all-entries {
 	background-image: url('/images/tree_bark.png');
@@ -42,3 +44,47 @@
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
 /* close commented backslash hack */
+
+
+
+
+/*blog index*/
+
+
+
+
+.blog_post {
+	display: inline-table;
+	width:125px;
+	height:160px;
+	border: 1px solid #52CC7A;
+	margin: 10px;
+	padding: 5px 5px 5px 5px;
+	border-radius: 15px 0 15px 0;
+}
+
+.photo {
+	width:125px;
+	height:100px;
+	background-size: auto;
+	background-color: white;
+	padding: 5px;
+	border-radius: 15px 0 0 0;
+}
+
+.entry_content {
+	width:125px;
+	height:60px;
+	background-color: white;
+	font-size: 13px;
+	padding: 5px;
+	text-decoration: none;
+	border-radius: 0 0 15px 0;
+	margin-top: -5px;
+}
+
+.current-photo {
+	height: 300;
+	width: auto;
+	margin: 10px 15px 10px 0;
+}

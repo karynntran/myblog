@@ -52,29 +52,17 @@ body {
 
 /*blog index*/
 
-/*.current-entry {
-	height: 200px;
-	width: 750px;
-	background-color: white;
-	opacity: .5px;
-	border-radius: 15px 0 15px 0;;
-	margin-bottom: 10px;
-	padding: 10px;
-	text-align: left;
-	border: 1px solid lightgray;
-}*/
 
 .current-photo {
-	float: left;
-	height: 200px;
-	width: auto;
-	margin-right: 5px;
+	height: auto;
+	width: 250;
+	margin: 10px 15px 10px 0;
 }
 
 .blog_post {
 	display: inline-table;
-	width:150px;
-	height:200px;
+	width:125px;
+	height:160px;
 	border: 1px solid #52CC7A;
 	margin: 10px;
 	padding: 5px 5px 5px 5px;
@@ -82,8 +70,8 @@ body {
 }
 
 .photo {
-	width:150px;
-	height:125px;
+	width:125px;
+	height:100px;
 	background-size: auto;
 	background-color: white;
 	padding: 5px;
@@ -91,10 +79,10 @@ body {
 }
 
 .entry_content {
-	width:150px;
-	height:75px;
+	width:125px;
+	height:60px;
 	background-color: white;
-	font-size: 15px;
+	font-size: 13px;
 	padding: 5px;
 	text-decoration: none;
 	border-radius: 0 0 15px 0;
