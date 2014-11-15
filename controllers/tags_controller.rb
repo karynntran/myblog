@@ -7,11 +7,12 @@ class TagsController < ApplicationController
 
 
   delete '/:id' do
+    content_type :json
     tag = Tag.find(params[:id])
     entry = tag.entries[0].id
     Tag.destroy(params[:id])
-    redirect '/entries/#{entry}'
 
+    redirect "/entries/#{entry}"
   end
 
 end
