@@ -119,3 +119,34 @@ input {
 	padding: 10px;
 }
 
+/*tags*/
+
+.tag-show {
+	background-color: #52CC7A;
+	width: fit-content;
+	border-radius: 5px;
+	padding: 3px;
+	display: inline;
+}
+
+.tag-edit-div {
+	background-color: #52CC7A;
+	width: auto;
+	border-radius:5px;
+	text-align: left;
+	width: 75px;
+}
+
+.tag-edit-li {
+	display: inline-block;
+	text-decoration: none;
+	border-radius: 5px;
+	vertical-align: middle;
+}
+
+.tag-edit-input {
+	background-color: #52CC7A;
+	border-radius: 5px;
+	float: left;
+}
+

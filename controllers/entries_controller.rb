@@ -55,8 +55,7 @@ class EntriesController < ApplicationController
     user = current_user
     @entry = Entry.find(params[:id])
     @tags = @entry.tags
-    @tag_body = @tags.map { |tag| tag.body }
-    @all_tags = @tag_body.join(" ")
+
 
 
     begin
@@ -65,7 +64,7 @@ class EntriesController < ApplicationController
       @error = e
     end
 
-    erb :'entries/show'
+    erb :'entries/show', :layout => false
   end
 
 ##DELETE ENTRIES##

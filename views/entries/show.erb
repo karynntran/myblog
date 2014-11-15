@@ -11,13 +11,11 @@
   <p><%= @entry.post %></p>
   <p><%= @entry.created_at %></p>
 
-  <p>Tags:
-  	<% @tag_body = @tags.map do |tag| %>
-  		<button class="tag"><%= tag.body  %></button>
-	<%  end %>
-
-    <% @all_tags = @tag_body.join(" ")%> <p>
-    <% @all_tags %>
+  <p>Tags:</p>
+    <% @tag_body = @tags.map do |tag| %>
+    	<div class="tag-show"><%= tag.body %></div>
+    <% end %>
+    <%@all_tags = @tag_body.join(" ")%>
 
 </div>
 
