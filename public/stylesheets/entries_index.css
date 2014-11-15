@@ -88,3 +88,8 @@
 	width: auto;
 	margin: 10px 15px 10px 0;
 }
+
+.tag {
+	background-color: green;
+	border: none;
+}

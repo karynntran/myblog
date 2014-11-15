@@ -5,6 +5,8 @@ Dir.glob('./{helpers,models,controllers}/*.rb').each do |file|
 	puts "required #{file}"
 end
 
+use ActiveRecord::ConnectionAdapters::ConnectionManagement 
+
 
 map('/tags'){ run TagsController }
 
@@ -15,3 +17,4 @@ map('/users'){ run UsersController }
 map('/sessions'){ run SessionsController }
 
 map('/'){ run ApplicationController }
+

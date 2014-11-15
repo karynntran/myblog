@@ -20,9 +20,9 @@ class EntriesController < ApplicationController
   end
 
   post '/' do
-    # binding.pry
+
     entry = Entry.create(params[:entry])
-    # tag = Tag.create(params[:tag])
+
     tag_string = params[:tag][:body].split(/\s|,\s|\s|,/)
 
     tag_string.each do |tag|
@@ -36,9 +36,6 @@ class EntriesController < ApplicationController
   get '/:id/edit' do
     @entry = Entry.find(params[:id])
     @tags = @entry.tags
-    # @tag_body = @tags.map { |tag| tag.body }
-    # @all_tags = @tag_body.join(", ")
-
     erb :'/entries/edit'
   end
 
@@ -59,7 +56,7 @@ class EntriesController < ApplicationController
     @entry = Entry.find(params[:id])
     @tags = @entry.tags
     @tag_body = @tags.map { |tag| tag.body }
-    @all_tags = @tag_body.join(", ")
+    @all_tags = @tag_body.join(" ")
 
 
     begin

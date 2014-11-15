@@ -11,7 +11,13 @@
   <p><%= @entry.post %></p>
   <p><%= @entry.created_at %></p>
 
-  <p>Tags: <%= @all_tags %><p>
+  <p>Tags:
+  	<% @tag_body = @tags.map do |tag| %>
+  		<button class="tag"><%= tag.body  %></button>
+	<%  end %>
+
+    <% @all_tags = @tag_body.join(" ")%> <p>
+    <% @all_tags %>
 
 </div>
 
