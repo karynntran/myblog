@@ -130,11 +130,12 @@ input {
 }
 
 .tag-edit-div {
-	background-color: #52CC7A;
+	background-color: white;
 	width: auto;
 	border-radius:5px;
 	text-align: left;
 	width: 75px;
+	border: 1px lightgray solid;
 }
 
 .tag-edit-li {
@@ -149,5 +150,6 @@ input {
 	background-color: #52CC7A;
 	border-radius: 5px;
 	float: left;
+	width: fit-content;
 }
 

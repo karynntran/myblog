@@ -1,10 +1,10 @@
 class EntriesController < ApplicationController
 
   get '/' do
+
     current_user
     @entries = Entry.all
     @sorted_entries = @entries.sort_by { |entry| entry[:id] }.reverse!
-
 
   erb :'entries', :layout => false
 

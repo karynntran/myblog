@@ -1,5 +1,6 @@
 <h1>Edit Your Entry</h1>
 
+
 <form action = '/entries/<%=@entry.id%>' name="method" method="post">
   <input type ="hidden" name="_method" value="patch"/>
   
@@ -8,25 +9,22 @@
   <p class="header">Header:</p><textarea rows="1" cols="50" name="entry[header]"><%=@entry.header%></textarea>
   
   <p class="header">Post:</p><textarea rows="25" cols="50" name="entry[post]"><%=@entry.post%></textarea>
-  
-  <p class="header">Tag(s):</p>
-  <% @tags.each do |tag| %>
-
-    <div class="tag-edit-div">
-        <li class="tag-edit-li"><%= tag.body %></li>
-        <li class="tag-edit-li">
-          <form action= '/tags/<%=tag.id%>' name="method" method="post">
-            <input type ="hidden" name="tags[id]" value="<%=tag.id%>"/>
-            <input type="hidden" name="_method" value="delete"/>
-            <input class="tag-edit-input" type="submit" value="X"/>
-          </form>  
-        </li>
-    </div>
-  <% end %>
-
-
   <input type ="submit" value="Submit">
 </form>	
 
+<p class="header">Tag(s):</p>
+<% @tags.each do |tag| %>
 
-	
+<div class="tag-edit-div">
+  <li class="tag-edit-li"><%= tag.body %></li>
+  <li class="tag-edit-li">
+    <form action= '/tags/<%=tag.id%>' name="method" method="post">
+      <input type ="hidden" name="tags[id]" value="<%=tag.id%>"/>
+      <input type="hidden" name="_method" value="delete"/>
+      <input class="tag-edit-input" type="submit" value="X"/>
+    </form>  
+  </li>
+</div>
+<% end %>
+
+

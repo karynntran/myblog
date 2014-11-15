@@ -17,6 +17,7 @@
     <% end %>
     <%@all_tags = @tag_body.join(" ")%>
 
+
 </div>
 
 
@@ -39,5 +40,19 @@
 <% end %>
 
 
+
+<script>
+  var $form  = $('.form-tag'),
+      $input = $('input[name="tag[body]"]');
+
+  var tagList = new tagList();
+  var tagListView = new tagListView($('.tags-ul'), tagList);
+
+  $form.on("submit", function(e){
+    e.preventDefault();
+    var tag = new Tag($input.val());
+    tagList.add(tag);
+  });
+</script>
 
 
