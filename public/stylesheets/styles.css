@@ -142,6 +142,7 @@ input {
 	text-decoration: none;
 	border-radius: 5px;
 	vertical-align: middle;
+	padding: 0 2px;
 }
 
 .tag-edit-input {

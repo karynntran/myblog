@@ -64,7 +64,7 @@ class EntriesController < ApplicationController
       @error = e
     end
 
-    erb :'entries/show', :layout => false
+    erb :'entries/show'
   end
 
 ##DELETE ENTRIES##
