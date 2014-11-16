@@ -13,18 +13,18 @@
 
 	
 	
-	<% if @sorted_entries[0].photo_link.empty? %>
+	<% if @featured_post.photo_link.empty? %>
 	  <p>
 	<% else %>
 	  <div class="current-photo">
-	    <img class ="photo" src ="<%=@sorted_entries[0].photo_link%>" width="250px" height="300px">
+	    <img class ="photo" src ="<%=@featured_post.photo_link%>" width="250px" height="300px">
 	  </div>
 	<% end %>
 
 	<p>
-	  <a href="/entries/<%= @sorted_entries[0].id %>"><%= @sorted_entries[0].header %></a>
+	  <a href="/entries/<%= @featured_post.id %>"><%= @sorted_entries[0].header %></a>
 	  </p>
-	<p><%= @sorted_entries[0].post %></p>
+	<p><%= @featured_post_spacing %></p>
     
 
 </div>

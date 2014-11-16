@@ -1,10 +1,12 @@
 class EntriesController < ApplicationController
 
   get '/' do
-
     current_user
     @entries = Entry.all
+
     @sorted_entries = @entries.sort_by { |entry| entry[:id] }.reverse!
+    @featured_post = @sorted_entries[0]
+    @featured_post_spacing = @featured_post.post.gsub("*","<br><br>")
 
   erb :'entries', :layout => false
 
@@ -21,6 +23,8 @@ class EntriesController < ApplicationController
 
   post '/' do
 
+    params[:entry][:post].gsub!("\r\n","*")
+
     entry = Entry.create(params[:entry])
 
     tag_string = params[:tag][:body].split(/\s|,\s|\s|,/)
@@ -34,7 +38,9 @@ class EntriesController < ApplicationController
   end
 
   get '/:id/edit' do
+
     @entry = Entry.find(params[:id])
+    @post = @entry.post.gsub("*","\r\n")
     @tags = @entry.tags
     erb :'/entries/edit'
   end
@@ -53,7 +59,9 @@ class EntriesController < ApplicationController
 
   get '/:id' do
     user = current_user
+
     @entry = Entry.find(params[:id])
+    @post = @entry.post.gsub("*","<br><br>")
     @tags = @entry.tags
 
 
