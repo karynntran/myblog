@@ -1,5 +1,5 @@
 require 'bundler'
-Bundler.require(:default)
+Bundler.require
 
 use ActiveRecord::ConnectionAdapters::ConnectionManagement 
 
@@ -14,7 +14,7 @@ require './models/entry'
 require './models/tag'
 require './models/user'
 
-require './helpers/application_helper'
+require './helpers/authentication_helper'
 
 
 map('/tags'){ run TagsController }
