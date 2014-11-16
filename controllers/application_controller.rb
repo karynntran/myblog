@@ -1,3 +1,5 @@
+require './helpers/authentication_helper'
+
 class ApplicationController < Sinatra::Base
   helpers Sinatra::AuthenticationHelper
   helpers ActiveSupport::Inflector
@@ -12,6 +14,8 @@ class ApplicationController < Sinatra::Base
   set :public_folder, File.expand_path('../../public',__FILE__)
 
   enable :sessions, :method_override
+
+  register Sinatra::ActiveRecordExtension
 
   ###ROUTES###
 
