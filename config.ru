@@ -4,17 +4,17 @@ Bundler.require
 use ActiveRecord::ConnectionAdapters::ConnectionManagement 
 
 
-require './controllers/application_controller'
-require './controllers/entries_controller'
-require './controllers/sessions_controller'
-require './controllers/tags_controller'
-require './controllers/users_controller'
+require './controllers/application_controller.rb'
+require './controllers/entries_controller.rb'
+require './controllers/sessions_controller.rb'
+require './controllers/tags_controller.rb'
+require './controllers/users_controller.rb'
 
-require './models/entry'
-require './models/tag'
-require './models/user'
+require './models/entry.rb'
+require './models/tag.rb'
+require './models/user.rb'
 
-require './helpers/authentication_helper'
+require './helpers/authentication_helper.rb'
 
 
 map('/tags'){ run TagsController }
